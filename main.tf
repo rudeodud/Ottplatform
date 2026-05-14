@@ -103,16 +103,18 @@ resource "aws_route_table_association" "ott_private_subnet2" {
 
 
 # AWS EC2 Instance resource for the OTT application
-resource "aws_Ec2_instance" "Ott_Ec2_instance" {
+resource "aws_instance" "Ott_Ec2_instance" {
     ami = var.ami_id
     instance_type = var.instance_type
     key_name = var.key_name
     subnet_id = aws_subnet.Ott_public_subnet1.id
     security_groups = [aws_security_group.ott_Ec2_sg.id]
+
+    associate_public_ip_address = true
     user_data = <<-EOF
                 #!/bin/bash
-                sudo yum update -y
-                sudo amazon-linux-extras install -y nginx1
+                sudo dnf update -y
+                sudo dnf install -y nginx
                 sudo systemctl start nginx
                 sudo systemctl enable nginx
                 EOF
@@ -128,7 +130,7 @@ resource "aws_db_subnet_group" "ott_db_subnet_group" {
 }
 
 resource "aws_db_instance" "ott_db_instance" {
-  identifier = "Ott-db-instance"
+  identifier = "ott-db-instance"
   engine = "mysql"
   engine_version = "8.0"
   instance_class = var.rds_type  
