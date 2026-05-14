@@ -3,6 +3,7 @@ terraform.tfvars
 .DS_Store
 *.pem
 *.key
+.env              # ← 이거 추가! 
 
 # Terraform 자동 생성 파일
 .terraform/
