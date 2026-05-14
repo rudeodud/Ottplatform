@@ -1,11 +1,18 @@
-# 변수값 & 비밀키 (절대 올리면 안됨!)
+# =========================
+# Secrets / Sensitive
+# =========================
 terraform.tfvars
-.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 *.pem
 *.key
-.env              # ← 이거 추가! 
 
-# Terraform 자동 생성 파일
+# =========================
+# Terraform
+# =========================
 .terraform/
 .terraform.lock.hcl
 terraform.tfstate
@@ -13,29 +20,31 @@ terraform.tfstate.backup
 *.tfstate
 *.tfstate.*
 
-# 충돌 파일
 crash.log
 override.tf
-override.tf.json   
+override.tf.json
 
-# IDE 및 운영체제 관련 파일
+# =========================
+# Node / React
+# =========================
 frontend/node_modules
+/build
 /.pnp
 .pnp.js
 
-# testing
+# =========================
+# Test
+# =========================
 /coverage
 
-# production
-/build
-
-# misc
+# =========================
+# OS / IDE
+# =========================
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
+# =========================
+# Logs
+# =========================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
