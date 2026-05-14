@@ -1,1 +1,18 @@
+# 변수값 & 비밀키 (절대 올리면 안됨!)
 terraform.tfvars
+.DS_Store
+*.pem
+*.key
+
+# Terraform 자동 생성 파일
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+
+# 충돌 파일
+crash.log
+override.tf
+override.tf.json
