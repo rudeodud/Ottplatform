@@ -1,3 +1,26 @@
 * {
-    padding: 0%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f8f8f8;
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+}
+
+/* 헤더(70px) + 사이드바(200px) 피해서 콘텐츠 배치 */
+.main-wrapper {
+  margin-top: 70px;    /* 헤더 높이 */
+  margin-left: 200px;  /* 사이드바 너비 */
+  min-height: calc(100vh - 70px);
+  background: #f8f8f8;
+}
+
+/* 모바일: 사이드바 없으니까 margin-left 제거 */
+@media (max-width: 768px) {
+  .main-wrapper {
+    margin-left: 0;
+    margin-top: 52px;  /* 모바일 헤더 높이 */
+  }
 }
