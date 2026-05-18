@@ -1,11 +1,13 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom'; // 추가
 import Header from './components/header.jsx';
 import Sidebar from './components/Sidbar.jsx';
 import HeroBanner from './components/HeroBanner.jsx';
 import TrendingSection from './components/TrendingSection.jsx';
 import NewReleasesSection from './components/NewReleasesSection.jsx';
 import MoviesSection from './components/MoviesSection.jsx';
-import Login from './components/Loign.jsx';
+import LoginPage from './pages/LoginPage.jsx'; // 추가
+import SignupPage from './pages/SignupPage.jsx'; // 추가
 
 function App() {
   return (
@@ -16,13 +18,28 @@ function App() {
       {/* 왼쪽 고정 사이드바 */}
       <Sidebar />
 
-      {/* 헤더·사이드바 피해서 배치되는 메인 영역 */}
+      {/* 라우팅 영역 */}
       <div className="main-wrapper">
-        <HeroBanner />
-        <TrendingSection />
-        <NewReleasesSection />
-        <MoviesSection /> 
-        <Login />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <HeroBanner />
+              <TrendingSection />
+              <NewReleasesSection />
+              <MoviesSection />
+            </>
+          } />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/homepage" element={
+            <>
+              <HeroBanner />
+              <TrendingSection />
+              <NewReleasesSection />
+              <MoviesSection />
+            </>
+          } />
+          <Route path="/signup" element={<SignupPage />} />
+        </Routes>
       </div>
     </div>
   );

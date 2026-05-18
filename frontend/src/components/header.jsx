@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // 1. Import at the top
 import '../styles/components.css';
 
 function Header() {
   const [searchVal, setSearchVal] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate(); // 2. Call the hook at the top level
 
   return (
     <div>
@@ -11,7 +13,7 @@ function Header() {
         {/* Left: Logo */}
         <div className="header-left">
           <div className="header-logo">
-            <span className="logo-wave">RUDEODUD</span>
+            <span className="logo-wave" onClick={() => navigate('/homepage')}>RUDEODUD</span>
           </div>
         </div>
 
@@ -27,9 +29,10 @@ function Header() {
 
         {/* Right side */}
         <div className="header-right">
-          <button className="login-btn">로그인</button>
+          <button className="login-btn" onClick={() => navigate('/login')}> 
+            로그인
+          </button>
           <div className="avatar">김</div>
-          {/* Hamburger (mobile only) */}
           <button
             className="hamburger"
             onClick={() => setMenuOpen(prev => !prev)}
@@ -42,7 +45,6 @@ function Header() {
         </div>
       </header>
 
-      {/* Mobile dropdown menu */}
       {menuOpen && (
         <div className="mobile-menu">
           <div className="mobile-search">
