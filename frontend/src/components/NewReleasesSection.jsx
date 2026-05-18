@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import './styles/section.css';
+import '../styles/section.css';
 
 const ITEMS = [
   { id: 7,  title: '정년이',        genre: '시대극',         rating: '9.2', color: '#2e2a0a' },

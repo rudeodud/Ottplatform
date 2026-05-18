@@ -1,4 +1,4 @@
-import './styles/hero.css';
+import '../styles/hero.css';
 
 const HERO = {
   title: '오징어 게임',

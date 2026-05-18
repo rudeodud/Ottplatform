@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './styles/components.css';
+import '../styles/components.css';
 
 function Header() {
   const [searchVal, setSearchVal] = useState('');

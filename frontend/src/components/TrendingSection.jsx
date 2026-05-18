@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import './styles/section.css';
+import '../styles/section.css';
 
 const ITEMS = [
   { id: 1,  title: '더 글로리',        genre: '드라마',        rating: '9.3', color: '#1a0a2e' },

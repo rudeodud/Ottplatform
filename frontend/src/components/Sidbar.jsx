@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './styles/Sidbar.css';
+import '../styles/Sidbar.css';
 
 function Sidebar() {
   const [activeNav, setActiveNav] = useState('홈');

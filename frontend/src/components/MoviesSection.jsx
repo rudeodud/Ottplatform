@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import './styles/section.css';
+import '../styles/section.css';
 
 const ITEMS = [
   { id: 13, title: '서울의 봄',   genre: '역사 드라마',   rating: '9.4', color: '#1a2a0a' },
