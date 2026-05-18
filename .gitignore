@@ -49,6 +49,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-server/noede_modules
+server/node_modules
 server/dist
 server/.env
