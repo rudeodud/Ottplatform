@@ -5,6 +5,7 @@ import HeroBanner from './components/HeroBanner.jsx';
 import TrendingSection from './components/TrendingSection.jsx';
 import NewReleasesSection from './components/NewReleasesSection.jsx';
 import MoviesSection from './components/MoviesSection.jsx';
+import Login from './components/Loign.jsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <TrendingSection />
         <NewReleasesSection />
         <MoviesSection /> 
+        <Login />
       </div>
     </div>
   );
